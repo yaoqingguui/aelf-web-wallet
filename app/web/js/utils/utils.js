@@ -14,6 +14,7 @@ import initAelf from './initAelf';
 import getPageContainerStyle from './getPageContainerStyle';
 import getParam from './getParam';
 import getBalanceAndTokenName from './getBalanceAndTokenName';
+import walletNameOmit from './walletNameOmit';
 import {
     historyPush,
     historyReplace,
@@ -50,5 +51,6 @@ export {
     walletStatusCheck,
     txIdOmit,
     tokenOmit,
-    newContact
+    newContact,
+    walletNameOmit
 };

@@ -17,7 +17,7 @@ import {historyGoBack} from '../../utils/historyChange';
 import getPageContainerStyle from '../../utils/getPageContainerStyle';
 
 import {FormattedMessage} from 'react-intl';
-
+import {walletNameOmit} from '../../utils/utils';
 import style from './NavWithDrawer.scss';
 require('./NavWithDrawer.css'); // 样式调整在HomePage/HomePage.css中
 
@@ -80,7 +80,7 @@ export default class NavWithDrawer extends Component {
                         onClick={e => this.siderbarClick(walletInfoList[address], e)}
                     >
                         <div className={style.icon}></div>
-                        <div>{walletName}</div>
+                        <div>{walletNameOmit(walletName)}</div>
                     </div>
                 )
             );
@@ -216,7 +216,7 @@ export default class NavWithDrawer extends Component {
                             style={{width: 22, height: 22}}
                         ></Svg>
                     ]}
-                >{walletInUseName}</NavBar>
+                >{walletNameOmit(walletInUseName)}</NavBar>
                 <Drawer
                     position="right"
                     className='my-drawer'

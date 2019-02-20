@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <!-- set `maximum-scale` for some compatibility issues -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
     <title>Wallet-AElf</title>
     <link href="/favicon.ico" rel="bookmark" type="image/x-icon">
     <!-- fastclick 使用有点问题... -->

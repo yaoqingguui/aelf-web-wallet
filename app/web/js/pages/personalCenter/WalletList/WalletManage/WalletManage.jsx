@@ -35,7 +35,8 @@ class WalletManage extends Component {
         super();
         this.state = {
             walletNameModal: false,
-            nameChanged: ''
+            nameChanged: '',
+            containerStyle: null
         };
     }
 
@@ -64,6 +65,14 @@ class WalletManage extends Component {
         }, false);
         this.setState({
             nameChanged: ''
+        });
+    }
+
+    componentDidMount() {
+        let containerStyle = getPageContainerStyle();
+        containerStyle.height = containerStyle.height - 61;
+        this.setState({
+            containerStyle
         });
     }
 
@@ -111,9 +120,7 @@ class WalletManage extends Component {
         if (!whetherBackupCheck()) {
             walletAddress = 'Please backup your wallet';
         }
-
-        let containerStyle = getPageContainerStyle();
-        containerStyle.height = containerStyle.height - 61;
+        const {containerStyle} = this.state;
         let html
             = <div className={'aelf-personal-pages aelf-solid' + ' ' + style.container} style={containerStyle}>
                 <div className={style.top}>

@@ -27,6 +27,7 @@ class Transfer extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            containerStyle: null
         };
         this.walletAddress = JSON.parse(localStorage.getItem('lastuse')).address;
         this.contractAddress = getParam('contract_address', window.location.href);
@@ -37,6 +38,7 @@ class Transfer extends Component {
         this.setState({amount: amount});
     }
 
+    
     inputAddress(address) {
         this.setState({
             address: address,
@@ -53,12 +55,13 @@ class Transfer extends Component {
 
     componentDidMount() {
         let address = this.walletAddress;
-
+        let containerStyle = getPageContainerStyle();
         getBalanceAndTokenName(address, this.contractAddress, output => {
             this.setState({
                 balance: output.balance,
                 tokenName: this.tokenName || output.tokenDetail.name,
-                contract_address: this.contractAddress
+                contract_address: this.contractAddress,
+                containerStyle
             });
         });
     }
@@ -144,7 +147,7 @@ class Transfer extends Component {
                 ></AelfButton>;
         }
 
-        let containerStyle = getPageContainerStyle();
+        const {containerStyle} = this.state;
 
         return (
             <div>
