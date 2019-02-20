@@ -34,6 +34,7 @@ class SystemSetting extends Component {
 
     setNewProvider(newProvider) {
         serviceProvider.setProvider(newProvider);
+        console.log(serviceProvider.setProvider(newProvider));
         this.setState({
             provider: serviceProvider.getProvider()
         });
@@ -56,7 +57,7 @@ class SystemSetting extends Component {
                         <Item>
                             <div
                                 onClick={
-                                    () => prompt('', 'aelf.New Provider' , [{
+                                    () => prompt('', 'aelf.New Provider', [{
                                         text: 'Cancel'
                                     }, {
                                         text: 'Submit',

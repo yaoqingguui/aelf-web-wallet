@@ -36,6 +36,14 @@ export default class Transactions extends React.Component {
         };
     }
 
+    componentDidMount() {
+        let listContainerStyle = getPageContainerStyle();
+        listContainerStyle.height -= 112;
+        this.setState({
+            listContainerStyle
+        });
+    }
+
     setValue(val) {
         this.setState({
             searchValue: val
@@ -118,8 +126,7 @@ export default class Transactions extends React.Component {
             );
         }
 
-        let listContainerStyle = getPageContainerStyle();
-        listContainerStyle.height -= 112;
+        const {listContainerStyle} = this.state;
 
         return (
             <div className={style.sideContainer}>

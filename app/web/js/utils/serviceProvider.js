@@ -11,7 +11,7 @@ function getProvider() {
 
     let provider = providerInLocal || defaultProvider;
     provider = /http/.test(provider) ? provider
-        : `${window.location.protocol}//${window.location.host}${provider}`;
+        : `${window.location.protocol}//${window.location.host}/${provider}`;
 
     return provider;
 }
@@ -20,7 +20,7 @@ function getDefaultProvider() {
 
     let provider = window.defaultConfig.httpProvider;
     provider = /http/.test(provider) ? provider
-        : `${window.location.protocol}//${window.location.host}${provider}`;
+        : `${window.location.protocol}//${window.location.host}/${provider}`;
 
     return provider;
 }
@@ -33,4 +33,4 @@ export default {
     getProvider,
     getDefaultProvider,
     setProvider
-}
+};
