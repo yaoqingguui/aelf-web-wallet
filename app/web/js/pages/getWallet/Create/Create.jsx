@@ -32,6 +32,13 @@ class Create extends Component {
         this.backpDir = '/get-wallet/backup?hash_redirect=%2Fassets'
     }
 
+    componentDidMount() {
+        let containerStyle = getPageContainerStyle();
+        this.setState({
+            containerStyle
+        });
+    }
+
     createAndGO() {
         if (!!this.haveCreate) {
             Toast.info('Wallet Created', 3, () => {
@@ -120,7 +127,8 @@ class Create extends Component {
             agreementHtml = <Svg icon="radio_selected12"></Svg>
         }
 
-        let containerStyle = getPageContainerStyle();
+        // let containerStyle = getPageContainerStyle();
+        const {containerStyle} = this.state;
         return (
             <div className={style.container} style={containerStyle}>
                 <div style={{

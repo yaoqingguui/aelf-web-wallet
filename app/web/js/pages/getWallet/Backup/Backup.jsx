@@ -33,7 +33,8 @@ class Backup extends Component {
             password: '',
             mnemonicDisplay: false,
             privateKeyModal: false,
-            passwordModal: false
+            passwordModal: false，
+            containerStyle: null
         };
         clipboard('#clipboard-backup');
     }
@@ -42,6 +43,13 @@ class Backup extends Component {
         e.preventDefault(); // 修复 Android 上点击穿透
         this.setState({
             [key]: true,
+        });
+    }
+
+    componentDidMount() {
+        let containerStyle = getPageContainerStyle();
+        this.setState({
+            containerStyle
         });
     }
 
@@ -103,19 +111,20 @@ class Backup extends Component {
     }
   
     render() {
-
+        const {containerStyle} = this.state;
         let mnemonicHtml = '';
         if (this.state.mnemonic) {
             mnemonicHtml =  <Mnemonic
                                 navTitle="Mnemonic"
                                 mnemonic={this.state.mnemonic}
                                 display={this.state.mnemonicDisplay}
-                                onLeftClick={() => this.toggleMnemonic()}>
+                                onLeftClick={() => this.toggleMnemonic()}
+                                containerStyle={containerStyle}
+                            >
                             </Mnemonic>;
         }
-
-        let containerStyle = getPageContainerStyle();
-
+        // let containerStyle = getPageContainerStyle();
+        
         return (
             <div className='aelf-bg-light'>
 

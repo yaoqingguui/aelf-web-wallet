@@ -44,7 +44,8 @@ class Mnemonic extends Component {
 			confirmDisplay: false,
 			mnemonicConfirmed: [],
             confirmSubNoticeShow: false,
-			confirmSubTitle: confirmSubTitle
+			confirmSubTitle: confirmSubTitle,
+			pageContainerStyle: this.props.containerStyle
 		};
 
 		this.setMnemonicDisorderedListStyle();
@@ -185,7 +186,8 @@ class Mnemonic extends Component {
 
 		let mnemonicDisorderedHtml = this.getMnemonicDisorderedHtml();
 		let { containerStyle,confirmContainerStyle } = this.getContainerStyle();
-		let pageContainerStyle = getPageContainerStyle();
+		const {pageContainerStyle} =  this.state;
+		// let pageContainerStyle = getPageContainerStyle();
 
 		return (
 			<div>

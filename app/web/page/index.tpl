@@ -47,5 +47,14 @@
 <!--   <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.5'><\/script>".replace("HOST", location.hostname));
 //]]></script> -->
+
+<script>
+    // Why do we do this?
+    // Because fixed and input method under IOS wechat can cause trigger region dislocation problem
+    ;(/iphone|ipod|ipad/i.test(navigator.appVersion)) && document.addEventListener('blur', (e) => {
+        // A type judgment is added here, because elements such as <a></a> also trigger blur events.
+        ['input', 'textarea'].includes(e.target.localName) && document.body.scrollIntoView(false)
+    }, true);
+</script>
 </body>
 </html>
