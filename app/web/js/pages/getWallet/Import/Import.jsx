@@ -36,9 +36,17 @@ class Import extends Component {
             tabNClass: style.tabTitle + ' ' + style.tabSelected,
             tabPClass: style.tabTitle,
             textNClass: style.textareaContainer + ' ' + style.textSelected,
-            textPClass: style.textareaContainer
+            textPClass: style.textareaContainer,
+            containerStyle: null
         };
         this.failMessage = 'Please input your privateKey or mnemonic'; // 请填入助记词或者私钥
+    }
+
+    componentDidMount() {
+        let containerStyle = getPageContainerStyle();
+        this.setState({
+            containerStyle
+        });
     }
 
     createAndGO() {
@@ -175,7 +183,7 @@ class Import extends Component {
             agreementHtml = <Svg icon="radio_selected12"></Svg>
         }
 
-        let containerStyle = getPageContainerStyle();
+        const {containerStyle} = this.state;
 
         return (
             <div className={style.container} style={containerStyle}>
