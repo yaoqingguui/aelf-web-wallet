@@ -39,6 +39,14 @@ export default class NavWithDrawer extends Component {
         });
     }
 
+    componentDidMount() {
+        let listContainerStyle = getPageContainerStyle();
+        listContainerStyle.height -= 80;
+        this.setState({
+            listContainerStyle
+        });
+    }
+
     siderbarClick(walletInfo) {
         let lastuse = {
             address: walletInfo.address,
@@ -138,10 +146,7 @@ export default class NavWithDrawer extends Component {
             //     )
             // );
         }
-
-        let listContainerStyle = getPageContainerStyle();
-        listContainerStyle.height -= 80;
-
+        const {listContainerStyle} = this.state;
         return (
             <div className={style.sideContainer}>
                 <div style={listContainerStyle}>

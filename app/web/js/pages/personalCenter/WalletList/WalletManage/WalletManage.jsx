@@ -71,7 +71,6 @@ class WalletManage extends Component {
     componentDidMount() {
         let containerStyle = getPageContainerStyle();
         containerStyle.height = containerStyle.height - 61;
-        alert(containerStyle.height);
         this.setState({
             containerStyle
         });
