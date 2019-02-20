@@ -33,7 +33,7 @@ class Backup extends Component {
             password: '',
             mnemonicDisplay: false,
             privateKeyModal: false,
-            passwordModal: false，
+            passwordModal: false,
             containerStyle: null
         };
         clipboard('#clipboard-backup');
