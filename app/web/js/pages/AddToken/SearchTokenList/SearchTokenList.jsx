@@ -141,7 +141,7 @@ export default class SearchTokenList extends React.Component {
                     >
                         <div className='addtoken-list-tokenname' >{tokenName}</div>
                         <div className='addtoken-list-name' >{tokenName} Chain</div>
-                        <div className='addtoken-list-tokenaddress' >{tokenAddress}</div>
+                        <div className='addtoken-list-tokenaddress' >{tokenOmit(tokenAddress)}</div>
                     </List.Item>
                 </div>
             );

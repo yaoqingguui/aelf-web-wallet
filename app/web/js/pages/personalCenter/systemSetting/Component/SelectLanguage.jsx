@@ -51,7 +51,7 @@ class Selectlang extends React.Component {
 
         localStorage.setItem('language', [label]);
 
-        window.history.go(0);
+        window.location.reload()
 
     }
 
